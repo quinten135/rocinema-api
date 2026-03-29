@@ -12,9 +12,9 @@ export default async function handler(req, res) {
 
     const pixels = [];
     image.scan(0, chunkY, w, chunkH, function(x, y, idx) {
-        pixels.push(this.bitmap.data[idx])      // R (0-255)
-        pixels.push(this.bitmap.data[idx+1])    // G
         pixels.push(this.bitmap.data[idx+2])    // B
+        pixels.push(this.bitmap.data[idx+1])    // G
+        pixels.push(this.bitmap.data[idx])      // R
         pixels.push(this.bitmap.data[idx+3])    // A
     });
 
